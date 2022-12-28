@@ -1,0 +1,11 @@
+.root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(2, 0, 143);
+	min-height: 30px;
+}
+
+.title {
+	color: white;
+}

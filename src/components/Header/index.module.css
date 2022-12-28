@@ -1,0 +1,14 @@
+.root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(2, 0, 143);
+	min-height: 50px;
+}
+
+.link {
+	padding: 5px 20px;
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
