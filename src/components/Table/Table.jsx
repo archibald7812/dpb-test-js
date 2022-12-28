@@ -4,21 +4,15 @@ import classnames from "classnames"
 
 export const Table = () => {
 
+	const base = useSelector(state => state.rates.base)
+	const rates = useSelector(state => state.rates.rates)
+
 	const header = [
 		{
-			title: "Side"
+			title: "Currency"
 		},
 		{
-			title: "Price"
-		},
-		{
-			title: "Instrument"
-		},
-		{
-			title: "Volume"
-		},
-		{
-			title: "Timestamp"
+			title: "Rate"
 		},
 	]
 
@@ -33,6 +27,16 @@ export const Table = () => {
 					</tr>
 				</thead>
 				<tbody>
+					{rates.map((rate, index) => {
+						if (rate[0] === base) return null
+						let fixedRate = 0
+						if ((1 / rate[1]) % 1 !== 0) fixedRate = (1 / rate[1]).toFixed(5)
+						else fixedRate = (1 / rate[1])
+						return <tr key={index}>
+							<td className={classnames(styles.bodyColumn)}>1 {rate[0]}</td>
+							<td className={classnames(styles.bodyColumn)}>{fixedRate} {base}</td>
+						</tr>
+					})}
 				</tbody>
 			</table>
 		</section>

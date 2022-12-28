@@ -1,5 +1,5 @@
 .root {
-	height: 100%;
+	height: auto;
 	padding-top: 30px;
 	font-size: 30px;
 	background-color: white;
@@ -11,6 +11,31 @@
 }
 
 .title {
+	color: rgb(2, 0, 143);
 	margin: 0 20px 0 0;
 	font-size: 25px;
+}
+
+.select {
+	color: grey;
+	outline: none;
+	border-radius: 5px;
+	border: 2px solid grey;
+}
+
+.select:hover {
+	color: rgb(2, 0, 143);
+	border: 2px solid rgb(2, 0, 143);
+}
+
+@media (max-width: 650px) {
+	.title {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 380px) {
+	.title {
+		font-size: 8px;
+	}
 }
